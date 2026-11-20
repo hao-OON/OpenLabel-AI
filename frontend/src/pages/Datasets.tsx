@@ -97,7 +97,7 @@ export default function Datasets() {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       <header className="flex items-end justify-between">
         <div>
           <h1 className="text-xl font-semibold">Datasets</h1>
@@ -111,7 +111,7 @@ export default function Datasets() {
         </div>
       )}
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-3 md:grid-cols-2">
         <section className="card space-y-3">
           <h2 className="text-base font-semibold">新建项目</h2>
           <div>

@@ -26,7 +26,7 @@ button, input, select { font: inherit; }
 button { -webkit-tap-highlight-color: transparent; }
 
 @layer components {
-  .card { @apply rounded-lg border border-slate-200/90 bg-white p-4 shadow-[0_8px_28px_rgba(35,50,82,0.06)]; }
+  .card { @apply rounded-md border border-slate-200/90 bg-white p-3 shadow-[0_6px_22px_rgba(35,50,82,0.055)]; }
   .btn { @apply inline-flex h-9 items-center justify-center gap-1.5 rounded-md px-3 text-xs font-bold transition duration-150 disabled:cursor-not-allowed disabled:opacity-45; }
   .btn-primary { @apply btn bg-brand-600 text-white shadow-[0_5px_13px_rgba(29,66,245,0.25)] hover:bg-brand-700 hover:shadow-[0_7px_17px_rgba(29,66,245,0.32)] active:translate-y-px; }
   .btn-secondary { @apply btn border border-slate-200 bg-white text-slate-700 hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700; }
@@ -35,6 +35,10 @@ button { -webkit-tap-highlight-color: transparent; }
   .label { @apply mb-1.5 block text-[11px] font-bold tracking-wide text-slate-500; }
   .badge { @apply inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold; }
   .section-kicker { @apply mb-2 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-brand-600; }
+  .annotation-page .btn { @apply h-8 px-2.5 text-[11px]; }
+  .annotation-page .input { @apply h-8 px-2.5 text-[11px]; }
+  .annotation-page .card { @apply p-2.5; }
+  .annotation-page .label { @apply mb-1 text-[10px]; }
 }
 
 table th { font-size: 10px; font-weight: 800; letter-spacing: .08em; }

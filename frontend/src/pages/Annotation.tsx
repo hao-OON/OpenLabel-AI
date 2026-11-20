@@ -134,11 +134,11 @@ export default function Annotation() {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="annotation-page space-y-2.5 text-[13px]">
       <header className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-xl font-semibold">Annotation</h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <h1 className="text-lg font-semibold">Annotation</h1>
+          <p className="mt-0.5 text-xs text-slate-500">
             AI 标注与人工复核工作台 · 低置信度样本优先进入队列
           </p>
         </div>
@@ -178,14 +178,14 @@ export default function Annotation() {
         </span>
       </div>
 
-      <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_420px]">
+      <div className="grid gap-3 md:grid-cols-2">
         <section className="card !p-0">
-          <div className="max-h-[55vh] divide-y divide-slate-100 overflow-y-auto">
+          <div className="max-h-[42vh] divide-y divide-slate-100 overflow-y-auto md:max-h-[calc(100vh-210px)]">
             {records.map((r) => (
               <button
                 key={r.id}
                 onClick={() => setSelected(r)}
-                className={`flex w-full items-start gap-3 px-3 py-2 text-left transition hover:bg-slate-50 ${
+                className={`flex w-full items-start gap-2 px-3 py-1.5 text-left transition hover:bg-slate-50 ${
                   selected?.id === r.id ? "bg-brand-50" : ""
                 }`}
               >
@@ -196,7 +196,7 @@ export default function Annotation() {
                       {statusText[r.review_status] ?? r.review_status}
                     </span>
                   </div>
-                  <div className="line-clamp-2 text-sm text-slate-700">{r.text}</div>
+                  <div className="line-clamp-2 text-[13px] text-slate-700">{r.text}</div>
                 </div>
                 <div className="shrink-0 space-y-1 text-right text-[11px]">
                   <div className="font-medium text-slate-500">
@@ -224,7 +224,7 @@ export default function Annotation() {
           </div>
         </section>
 
-        <section className="card space-y-4">
+        <section className="card space-y-2.5">
           {!selected && <div className="text-sm text-slate-400">从左侧选择一条样本开始审核。</div>}
           {selected && (
             <>
@@ -242,17 +242,17 @@ export default function Annotation() {
 
               <div>
                 <div className="label">用户评论</div>
-                <div className="rounded-lg bg-slate-50 p-3 text-sm leading-relaxed text-slate-700">
+                <div className="rounded-md bg-slate-50 p-2 text-[13px] leading-relaxed text-slate-700">
                   {selected.text}
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-lg border border-slate-200 p-3">
+              <div className="grid grid-cols-2 gap-2 sm:max-w-md">
+                <div className="rounded-md border border-slate-200 p-2">
                   <div className="text-xs text-slate-400">AI 推荐标签</div>
                   <div className="mt-1 text-lg font-semibold">{selected.ai_label ?? "未标注"}</div>
                 </div>
-                <div className="rounded-lg border border-slate-200 p-3">
+                <div className="rounded-md border border-slate-200 p-2">
                   <div className="text-xs text-slate-400">置信度</div>
                   <div className="mt-1 text-lg font-semibold tabular-nums">
                     {selected.ai_confidence != null
